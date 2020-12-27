@@ -19,13 +19,17 @@ public class RecipeIngredient {
     private String recipeIngredientId;
     @ManyToOne(
             cascade = {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE, CascadeType.DETACH},
-            fetch = FetchType.EAGER)
-    @JoinColumn(name = "ingredient_id")
+            fetch = FetchType.LAZY)
     private Ingredient ingredient;
 
-    @ManyToOne
-    @JoinColumn(name = "recipeI_id")
+
+
+    @ManyToOne(
+            cascade = {CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH},
+            fetch = FetchType.EAGER)
+    @JoinColumn(referencedColumnName = "jpa_assignment.entity.recipe.recipe_id")
     private Recipe recipe;
+
 
     private double amount;
     private Measurement measurement;
