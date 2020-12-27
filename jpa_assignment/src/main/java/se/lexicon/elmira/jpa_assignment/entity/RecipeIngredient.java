@@ -27,7 +27,7 @@ public class RecipeIngredient {
     @ManyToOne(
             cascade = {CascadeType.PERSIST,CascadeType.REFRESH,CascadeType.MERGE,CascadeType.DETACH},
             fetch = FetchType.EAGER)
-    @JoinColumn(referencedColumnName = "jpa_assignment.entity.recipe.recipe_id")
+    @JoinColumn(referencedColumnName = "recipe_id")
     private Recipe recipe;
 
 
