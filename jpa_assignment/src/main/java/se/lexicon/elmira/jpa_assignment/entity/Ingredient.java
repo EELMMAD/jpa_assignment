@@ -8,10 +8,11 @@ import java.util.Objects;
 
 
 
-
+@Entity
 public class Ingredient {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
        private int ingredient_id;
      private String ingredient_name;
 
