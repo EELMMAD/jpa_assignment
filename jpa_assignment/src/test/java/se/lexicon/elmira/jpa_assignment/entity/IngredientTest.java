@@ -4,11 +4,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -26,7 +21,7 @@ class IngredientTest {
     void successfully_created() {
         assertNotNull(testIngredient);
         assertTrue(testIngredient.getIngredient_id() == 0);
-        assertEquals("Test", testIngredient.getIngredient_name());
+        assertEquals("Test", testIngredient.getIngredientName());
     }
 
     @Test
@@ -40,7 +35,11 @@ class IngredientTest {
     void testToString() {
         String toString = testIngredient.toString();
 
-        assertTrue(toString.contains(testIngredient.getIngredient_name()));
+        assertTrue(toString.contains(testIngredient.getIngredientName()));
         assertTrue(toString.contains(testIngredient.getIngredient_id() + ""));
+    }
+
+    @AfterEach
+    void tearDown() {
     }
 }

@@ -12,6 +12,17 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int recipe_id;
 
+    public List<RecipeIngredient> getRecipeIngredients() {
+        return recipeIngredients;
+    }
+
+    public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+        this.recipeIngredients = recipeIngredients;
+    }
+
+    public void setCategories(List<RecipeCategory> categories) {
+        this.categories = categories;
+    }
 
     private String recipe_name;
 

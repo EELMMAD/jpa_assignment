@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import se.lexicon.elmira.jpa_assignment.entity.Ingredient;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
@@ -31,7 +30,7 @@ class IngredientRepositoryTest {
     void successfullyCreated (){
         assertNotNull(testIngredient);
         assertTrue(testIngredient.getIngredient_id() != 0);
-        assertEquals("Ingredient 1", testIngredient.getIngredient_name());
+        assertEquals("Ingredient 1", testIngredient.getIngredientName());
     }
 
     @Test
